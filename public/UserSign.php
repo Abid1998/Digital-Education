@@ -20,20 +20,19 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             $hash = password_hash($Password,PASSWORD_DEFAULT);
             
             $sql= "INSERT INTO `users` (`UserEmail`, `UserPassword`, `TampDate`) VALUES ('$UserEmail', '$hash', current_timestamp())";
-
-            // $sql = "INSERT INTO `user` (`UserEmail`, `UserPassword`) VALUES ( '$UserEmail', '$hash')";
             $result = mysqli_query($conn, $sql);
             echo $result;
-            if ($result) {
+             if ($result) {
                 $showAlert=true;
                 header("Location: /BlogWeb/index.php?signupsuccess=true"); //redairect Home Page
                 exit();
-            }
-            else {
+
+            }else {
                         $showError ="Password Do not match";
                  }
         }
-        header("Location: /BlogWeb/index.php?signupsuccess=false&error=$showError"); 
     }
+    header("Location: /BlogWeb/index.php?signupsuccess=false&error=$showError"); 
 }
+
 ?>

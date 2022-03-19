@@ -19,8 +19,8 @@
 
 <body>
     <!-- ----------------------------------Header-Navbar--------------------------------- -->
-    <?php include'public/Header.php';?>
-    <?php include 'public/DBConnect.php';?>
+    <?php include 'public/Header.php';
+    include 'public/DBConnect.php';?>
     <!-- ----------------------------------------Section-Courses----------------------------------------------- -->
     <?php
     $id=$_GET['Qsnid'];
